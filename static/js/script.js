@@ -97,10 +97,14 @@ $(document).ready(function () {
       images.forEach(function (image) {
         var imgSrc =
           "/static/img/output/" + fileName + "/" + folder + "/" + image;
-        section.attr("src", imgSrc);
+        if (section == "gifSection") {
+          section.attr("src", imgSrc);
+        } else {
+          section.append('<img src="' + imgSrc + '" class="img-fluid" >');
+        }
       });
     } else {
-      section.attr("src", "/static/img/assets/no-image.png");
+      section.append("<p>Tidak ada gambar di folder " + folder + "</p>");
     }
   }
   // Tombol Reset untuk menghapus semua data di form dan hasil prediksi
