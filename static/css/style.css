@@ -160,7 +160,7 @@ section {
   opacity: 100%;
   background-color: f3f5fa;
   box-shadow: -6px -6px 8px 0 rgba(204, 203, 203, 0.87),
-    4px 4px 8px 0px rgba(0, 0, 0, 0.801);
+    4px 4px 12px 0px rgba(0, 0, 0, 0.801);
 }
 
 .predict-result img,
@@ -205,7 +205,8 @@ section {
   cursor: pointer;
   background: white;
   border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  box-shadow: -6px -6px 8px 0 rgba(204, 203, 203, 0.87),
+    4px 4px 12px 0px rgba(0, 0, 0, 0.801);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
