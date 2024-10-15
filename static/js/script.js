@@ -92,12 +92,12 @@ $(document).ready(function () {
   function displayImages(sectionId, images, fileName, folder) {
     var section = $("#" + sectionId);
     section.empty(); // Kosongkan konten yang ada
-
+    console.log("sectionId", sectionId);
     if (images.length > 0) {
       images.forEach(function (image) {
         var imgSrc =
           "/static/img/output/" + fileName + "/" + folder + "/" + image;
-        if (section == "gifSection") {
+        if (sectionId == "gifSection") {
           section.attr("src", imgSrc);
         } else {
           section.append('<img src="' + imgSrc + '" class="img-fluid" >');
