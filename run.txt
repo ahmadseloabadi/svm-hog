@@ -1,0 +1,10 @@
+#running app 
+-> flask --app app run --debug
+-> atau langsung run aja app.py icon run pojok kanan atas 
+
+#install lib
+
+-> py -m pip install <nama library>
+
+# note:
+jangan lupa aktifin virtual environment nya  

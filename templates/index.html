@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>svm-hog</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+
+    <link rel="icon" href="static/img/assets/favicon.ico" />
+    <link rel="stylesheet" href="static/css/style.css" />
+  </head>
+  <body>
+    <!-- navbar -->
+    <nav class="navbar sticky-top navbar-expand-lg">
+      <div class="container custom-navbar">
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        ></button>
+        <div
+          class="collapse navbar-nav navbar-collapse w-50"
+          id="navbarSupportedContent"
+        >
+          <a class="navbar-brand" href="#hero">
+            <img
+              class="img-fluid"
+              src="{{url_for('static', filename='img/assets/wayang.png')}}"
+              alt="Logo"
+              width="90"
+              height="90"
+            />
+          </a>
+          <div class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#hero">HOME</a>
+          </div>
+          <div class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#content-teori"
+              >TEORI</a
+            >
+          </div>
+          <div class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#prediksi"
+              >PREDIKSI</a
+            >
+          </div>
+          <div class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#report"
+              >REPORT</a
+            >
+          </div>
+          <div class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#aboutme"
+              >ABOUT ME</a
+            >
+          </div>
+          <a class="navbar-brand" href="#hero">
+            <img
+              class="img-fluid"
+              src="{{url_for('static', filename='img/assets/wayang.png')}}"
+              alt="Logo"
+              width="90"
+              height="90"
+              style="transform: scaleX(-1)"
+            />
+          </a>
+        </div>
+      </div>
+    </nav>
+    <!-- end navbar -->
+
+    <!-- hero -->
+    <section class="hero" id="hero">
+      <div class="container">
+        <div class="row hero-content">
+          <div class="col d-flex flex-column">
+            <div class="big-header d-flex align-items-center">
+              klasifikasi
+              <div class="animated-header">
+                <div class="first">aksara jawa</div>
+                <div class="second">Ha Na Ca Ra Ka</div>
+                <div class="third">ꦲꦤꦕꦫꦏ</div>
+              </div>
+            </div>
+            <div class="big-header">
+              menggunakan metode SVM dan ekstraksi fitur HOG
+            </div>
+            <p class="primary-copy mt-4">
+              Hanacaraka adalah sebutan untuk sejumlah aksara serumpun yang
+              terutama digunakan di pulau Jawa dan Bali.
+            </p>
+          </div>
+          <div class="col hero-img">
+            <img
+              src="{{url_for('static', filename='img/assets/hanacaraka.jpg')}}"
+              alt=""
+              class="img-fluid"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- end hero -->
+
+    <!-- content -->
+    <section class="content" id="content-teori">
+      <div class="container">
+        <div class="d-flex fill-content flex-row align-items-center">
+          <div class="flex-column text-content">
+            <h2 class="medium-header">Hanacaraka</h2>
+            <p class="primary-copy">
+              Hanacaraka adalah sebutan untuk sejumlah aksara/huruf serumpun
+              yang terutama digunakan di pulau Jawa ,Huruf Jawa merupakan salah
+              satu dari budaya Indonesia yang beragam di pulau Jawa. Namun
+              seiring dengan perkembangan teknologi, budaya huruf Jawa ini mulai
+              ditinggalkan. Banyak generasi muda sekarang yang lebih tertarik
+              untuk belajar bahasa asing daripada Bahasa Jawa.
+            </p>
+          </div>
+          <div class="img-content">
+            <img
+              src="{{url_for('static', filename='img/assets/hero-hanacaraka.png')}}"
+              alt=""
+            />
+          </div>
+        </div>
+        <div class="d-flex fill-content flex-row-reverse align-items-center">
+          <div class="flex-column text-content-reverse">
+            <h2 class="medium-header">Pengolahan Citra</h2>
+            <p class="primary-copy">
+              pengolahan citra salah satu evolusi dalam kecerdasan
+              buatan.pengolahan citra dengan Metode SVM bekerja atas prinsip
+              Structural Risk Minimization (SRM) dengan tujuan menemukan
+              hyperplane yang terbaik untuk memisahkan kedua class pada input
+              space juga bertujuan untuk meminimalkan batas atas dari general
+              error sehingga baik dalam pengklasifikasian citra.
+            </p>
+          </div>
+          <div class="">
+            <img
+              src="{{url_for('static', filename='img/assets/svm.jpg')}}"
+              alt=""
+            />
+          </div>
+        </div>
+        <div class="d-flex fill-content flex-row align-items-center">
+          <div class="flex-column text-content">
+            <h2 class="medium-header">Histogram of Oriented Gradients (HOG)</h2>
+            <p class="primary-copy">
+              Histogram of Oriented Gradients (HOG) merupakan metode untuk
+              melakukan diskriminasi fitur. Fitur ini merupakan deskripsi
+              histogram berdasarkan tepi dan orientasi yang berlaku untuk
+              pengenalan objek.Penggunaan HOG sebagai ekstraksi ciri memiliki
+              kemampuan mengenali bentuk yang lebih baik dan akurasi yang tinggi
+              dan proses pelatihannya tidak memakan waktu yang lama.
+            </p>
+          </div>
+          <div class="">
+            <img
+              src="{{url_for('static', filename='img/assets/HOG.png')}}"
+              alt=""
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- end content -->
+
+    <!-- hanacaraka -->
+    <section class="hanacaraka" id="prediksi">
+      <div class="container custom-hanacaraka">
+        <div class="hanacaraka-predict d-flex gap-5">
+          <form
+            class="form-predict p-2"
+            id="uploadForm"
+            method="post"
+            enctype="multipart/form-data"
+          >
+            <div class="image-upload mb-4" id="preview">
+              <img
+                src="{{url_for('static', filename='img/assets/no-image.png')}}"
+                style="width: 100%; height: 22rem"
+                id="previewImg"
+              />
+            </div>
+            <hr />
+            <div class="btn-predict mt-4">
+              <input
+                class="form-control p-2"
+                type="file"
+                name="file"
+                id="imageInput"
+                accept=".png, .jpg, .jpeg"
+              />
+            </div>
+            <div class="btn-predict mt-4 gap-4">
+              <button id="predictBtn" type="submit" class="btn h-100 w-100">
+                Prediksi
+              </button>
+            </div>
+          </form>
+          <div class="predict-result p-2">
+            <div class="gap-2 d-flex pt-3 justify-content-center">
+              <h4>Hasil Prediksi:</h4>
+              <h4 id="resultText">Belum dilakukan prediksi</h4>
+            </div>
+            <!-- output gif img -->
+            <hr />
+            <div class="row" style="height: 17.1rem">
+              <img
+                class="img-fluid"
+                src="{{url_for('static', filename='img/assets/no-image.png')}}"
+                alt=""
+                style="width: 100%; height: 17.1rem"
+                srcset=""
+                id="gifSection"
+              />
+            </div>
+            <hr />
+            <!-- end output gif img -->
+            <div class="btn-predict mt-4">
+              <button
+                id="detailBtn"
+                class="btn h-100 w-100"
+                data-bs-toggle="modal"
+                data-bs-target="#modalimgdetail"
+              >
+                Detail
+              </button>
+            </div>
+            <div class="btn-predict mt-4">
+              <button id="resetButton" class="btn h-100 w-100">Reset</button>
+            </div>
+          </div>
+
+          <!-- Modal alert -->
+          <div
+            class="modal fade"
+            id="statusModal"
+            data-bs-backdrop="static"
+            tabindex="-1"
+            aria-labelledby="statusModalLabel"
+            aria-hidden="true"
+          >
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header" style="border: none">
+                  <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"
+                  ></button>
+                </div>
+                <div class="modal-body d-flex justify-content-center mb-4">
+                  <div
+                    id="loadingMessage"
+                    style="
+                      display: flex;
+                      justify-content: center;
+                      gap: 4px;
+                      margin-bottom: 24px;
+                    "
+                  >
+                    <div class="spinner-border" role="status">
+                      <span class="visually-hidden">Loading...</span>
+                    </div>
+                    <p role="status" class="mb-0 mt-auto">Proses prediksi</p>
+                  </div>
+                  <div id="errorMessage" style="display: none">
+                    <p>Silahkan masukan gambar</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- end modal alert -->
+
+          <!-- modal img detail-->
+          <div
+            class="modal fade"
+            id="modalimgdetail"
+            data-bs-backdrop="static"
+            data-bs-keyboard="false"
+            tabindex="-1"
+            aria-labelledby="staticBackdropLabel"
+            aria-hidden="true"
+          >
+            <div
+              class="modal-dialog modal-lg modal-dialog-scrollable modal-dialog-centered"
+            >
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="staticBackdropLabel">
+                    Detail Img
+                  </h1>
+                  <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"
+                  ></button>
+                </div>
+                <div class="modal-body">
+                  <div id="modalbodyimg" style="display: none">
+                    <div class="image-upload w-100 h-100" id="preview-modal">
+                      <h3>Img input</h3>
+                      <img
+                        class="img-fluid"
+                        src="{{url_for('static', filename='img/assets/no-image.png')}}"
+                        id="previewImg-modal"
+                      />
+                    </div>
+                    <hr />
+
+                    <div>
+                      <h3>Img Preprocessing</h3>
+                      <!-- output prepro img -->
+                      <div class="img w-100 h-100">
+                        <img
+                          class="img-fluid"
+                          alt=""
+                          srcset=""
+                          id="preproSection"
+                        />
+                      </div>
+                      <!-- end output prepro img -->
+                    </div>
+                    <hr />
+                    <div>
+                      <h3>Img result</h3>
+                      <!-- output result img -->
+                      <div class="img w-100 h-100">
+                        <img
+                          class="img-fluid"
+                          alt=""
+                          srcset=""
+                          id="resultSection"
+                        />
+                      </div>
+                      <!-- end output result img -->
+                    </div>
+                  </div>
+                  <h3 id="noPredik">Belum dilakukan prediksi</h3>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- end modal img detail -->
+        </div>
+      </div>
+    </section>
+    <!-- end hanacaraka -->
+
+    <!-- report -->
+    <section class="report" id="report">
+      <div class="container">
+        <div class="row img-report d-flex justify-content-between">
+          <div class="col text-center">
+            <img
+              src="{{url_for('static', filename='img/eval/confusion.png')}}"
+              alt=""
+            />
+          </div>
+
+          <div class="col text-center">
+            <img
+              src="{{url_for('static', filename='img/eval/classification.png')}}"
+              alt=""
+            />
+          </div>
+        </div>
+      </div>
+      <div class="stats-container">
+        <div class="stats-card">
+          <div class="row">
+            <div class="col-4 stat-item">
+              <div class="stat-value">86%</div>
+              <div class="stat-label">Akurasi</div>
+            </div>
+            <div class="col-4 stat-item">
+              <div class="stat-value">87%</div>
+              <div class="stat-label">Precision</div>
+            </div>
+            <div class="col-4 stat-item">
+              <div class="stat-value">86%</div>
+              <div class="stat-label">Recall</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- end report -->
+
+    <!-- aboutme -->
+    <section class="aboutme" id="aboutme">
+      <div class="profile-header text-center">
+        <img
+          src="{{url_for('static', filename='img/assets/profile.png')}}"
+          alt="Profile Picture"
+          class="profile-img mb-3"
+        />
+
+        <h1 class="animated-name">SMOKY</h1>
+
+        <p class="lead">123456789</p>
+
+        <div class="social-container">
+          <div class="circle">
+            <a href="#" class="social-icon">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+          </div>
+          <div class="circle">
+            <a href="#" class="social-icon">
+              <i class="fab fa-twitter"></i>
+            </a>
+          </div>
+          <div class="circle">
+            <a href="#" class="social-icon">
+              <i class="fab fa-instagram"></i>
+            </a>
+          </div>
+          <div class="circle">
+            <a href="#" class="social-icon">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="copy-right text-center">
+        <p class="item mb-0">SMOKY © 2024</p>
+      </div>
+    </section>
+
+    <!-- end aboutme -->
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script
+      src="https://kit.fontawesome.com/99dc19792f.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="static/js/script.js"></script>
+  </body>
+</html>
