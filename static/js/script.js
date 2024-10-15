@@ -92,7 +92,7 @@ $(document).ready(function () {
   function displayImages(sectionId, images, fileName, folder) {
     var section = $("#" + sectionId);
     section.empty(); // Kosongkan konten yang ada
-    console.log("sectionId", sectionId);
+
     if (images.length > 0) {
       images.forEach(function (image) {
         var imgSrc =
