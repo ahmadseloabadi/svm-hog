@@ -33,13 +33,6 @@ svm-hog/
 ├── svm_hog.ipynb               # Notebook untuk pelatihan dan eksplorasi model
 ├── requirements.txt            # Daftar dependensi proyek
 │
-├── dataset/                    # Folder dataset aksara Jawa
-│   ├── train/                  # Dataset pelatihan
-│   └── test/                   # Dataset pengujian
-│
-├── model/                      # Folder untuk menyimpan model SVM hasil training
-│   └── svm_model.pkl
-│
 ├── static/                     # File statis untuk web (CSS, JS, gambar)
 │   └── styles.css
 │
