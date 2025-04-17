@@ -1,6 +1,6 @@
 # Klasifikasi Aksara Jawa menggunakan SVM dan Ekstraksi Fitur HOG
 
-![Aksara Jawa](https://github.com/ahmadseloabadi/svm-hog/raw/main/assets/aksara-jawa.jpg)
+![image](https://github.com/user-attachments/assets/a2918e95-8cd4-4804-8f6c-72a25e453b60)
 
 ## Deskripsi Proyek
 
@@ -110,10 +110,9 @@ Dataset terdiri dari gambar aksara Jawa nglegena (aksara dasar) dengan 20 kelas 
 ## Hasil dan Evaluasi
 
 Hasil evaluasi model menunjukkan:
-- Akurasi: 95.78%
-- Presisi rata-rata: 94.63%
-- Recall rata-rata: 95.21%
-- F1-score: 94.92%
+- Akurasi: 86%
+- Presisi rata-rata: 87%
+- Recall rata-rata: 86%
 
 Confusion matrix dan laporan klasifikasi lengkap dapat dilihat pada notebook evaluasi.
 
