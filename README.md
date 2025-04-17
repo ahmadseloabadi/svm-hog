@@ -27,20 +27,26 @@ Proyek ini bertujuan untuk mengklasifikasikan aksara Jawa menggunakan metode Sup
 
 ```
 svm-hog/
-├── assets/                   # Gambar dan aset lainnya
-├── dataset/                  # Dataset aksara Jawa
-├── models/                   # Model yang telah dilatih
-├── src/
-│   ├── app.py               # Aplikasi utama
-│   ├── hog.py               # Modul ekstraksi fitur HOG
-│   ├── preprocess.py        # Modul preprocessing gambar
-│   ├── svm_model.py         # Modul implementasi SVM
-│   └── utils.py             # Fungsi utilitas
-├── training/
-│   ├── train_model.py       # Script untuk melatih model
-│   └── evaluate_model.py    # Script untuk evaluasi model
-├── requirements.txt         # Dependensi proyek
-└── README.md                # Dokumentasi proyek
+│
+├── app.py                      # Aplikasi utama (web interface)
+├── predict.py                  # Modul prediksi karakter aksara Jawa
+├── svm_hog.ipynb               # Notebook untuk pelatihan dan eksplorasi model
+├── requirements.txt            # Daftar dependensi proyek
+│
+├── dataset/                    # Folder dataset aksara Jawa
+│   ├── train/                  # Dataset pelatihan
+│   └── test/                   # Dataset pengujian
+│
+├── model/                      # Folder untuk menyimpan model SVM hasil training
+│   └── svm_model.pkl
+│
+├── static/                     # File statis untuk web (CSS, JS, gambar)
+│   └── styles.css
+│
+├── templates/                  # Template HTML untuk antarmuka web
+│   └── index.html
+│
+└── README.md                   # Dokumentasi proyek (file ini)
 ```
 
 ## Cara Instalasi
